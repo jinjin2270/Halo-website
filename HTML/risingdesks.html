@@ -422,6 +422,35 @@
             <div class="footerbotright">2018&copy; company.Ltd. All Right reserved</div>
         </div>
     </footer>
+
+    <script>
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const parentItems = document.querySelectorAll('.parent');
+            
+            parentItems.forEach(item => {
+                const link = item.querySelector('a:first-child');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 850) {
+                        e.preventDefault();
+                        item.classList.toggle('open');
+                    }
+                });
+            });
+
+            // Close menu when clicking on a link (optional)
+            const menuLinks = document.querySelectorAll('nav a');
+            const menuCheckbox = document.getElementById('check');
+            
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 850) {
+                        menuCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
