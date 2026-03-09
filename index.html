@@ -27,9 +27,10 @@
             <div class="headleft1"><i class="fa-solid fa-phone fa-beat-fade"></i> +959123456789</div>
             <div class="headleft2"><i class="fa-solid fa-envelope fa-beat-fade"></i> Halo@gmail.com</div>
         </div>
-        <div class="headright">
+        <div class="headright"> 
             <a href="./HTML/Login.html"><div class="login"><i class="fa-regular fa-user"></i></div></a>
-            <i class="fa-solid fa-globe"></i> English</div>
+            <i class="fa-solid fa-globe"></i> English
+        </div>
     </div>
     <header>
         <div class="logo">Hal<span class="light">o</span>
@@ -41,9 +42,9 @@
                 <li><a accesskey="h" href="#" class="link current">Home</a></li>
                 <li class="parent"><a accesskey="r" href="./HTML/risingdesks.html" class="link">Rising Desks</a>
                     <ul class="inner">
-                        <li><a href="">Standing Desks</a></li>
-                        <li><a href="">Desk Converters</a></li>
-                        <li><a href="">Accessories</a></li>
+                        <li><a href="./HTML/risingdesks.html#standing">Standing Desks</a></li>
+                        <li><a href="./HTML/risingdesks.html#converters">Desk Converters</a></li>
+                        <li><a href="./HTML/risingdesks.html#accessories">Accessories</a></li>
                     </ul>
                 </li>
                 <li><a accesskey="b" href="./HTML/healthbenefits.html" class="link">Health Benefits</a></li>
@@ -79,7 +80,7 @@
             <div class="discounttext2">Shop Now</div>
         </div>
         <div class="discountright">
-            <video controls autoplay><source src="./Images/Standingdesk-Video.mp4" type="video/mp4"></video>
+            <video controls autoplay muted><source src="./Images/Standingdesk-Video.mp4" type="video/mp4"></video>
         </div>
     </section>
     <section class="homepagehealth">
@@ -256,5 +257,23 @@
             <div class="footerbotright">2018&copy; company.Ltd. All Right reserved</div>
         </div>
     </footer>
+
+    <script>
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const parentItems = document.querySelectorAll('.parent');
+            
+            parentItems.forEach(item => {
+                const link = item.querySelector('a:first-child');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 850) {
+                        e.preventDefault();
+                        item.classList.toggle('open');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
